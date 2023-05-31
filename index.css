@@ -3,4 +3,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 550px;
+    margin: auto;
+}
+
+header {
+    outline: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background-image: url(./img/header-img.jpg);
 }
