@@ -1,5 +1,8 @@
 const searchField = document.getElementById("search-field")
 const searchBtn = document.getElementById("search-btn")
+const main = document.getElementById("main")
+
+let searchResults = []
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -13,7 +16,20 @@ function submitSearch() {
         .then(res => res.json())
         .then(data => {
             console.log(data)
+            searchResults = data.search
+            console.log(searchResults)
         })
 }
 
-// http://www.omdbapi.com/?i=tt3896198&apikey=8c98ceb6
+// ⬇️ RENDER APP ⬇️
+
+function renderEmptyFilms() {
+    main.innerHTML = `
+        <div id="filler">
+            <img src="./img/reel.png" alt="">
+            <p>Start exploring</p>
+        </div>
+    `
+}
+
+renderEmptyFilms()
