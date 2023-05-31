@@ -7,12 +7,12 @@ let filmsArray = []
 // ⬇️ EVENT LISTENERS ⬇️
 
 searchBtn.addEventListener("click", function() {
-    submitSearch()
+    getFilms()
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
 
-function submitSearch() {
+function getFilms() {
     console.log(searchField.value)    
     fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
         .then(res => res.json())
