@@ -22,6 +22,17 @@ function submitSearch() {
         })
 }
 
+function getFilm(id) {
+    console.log(id)    
+    fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=8c98ceb6&t=${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            // searchResults = data.Search
+            // renderSearchResults()
+        })
+}
+
 // ⬇️ RENDER APP ⬇️
 
 function renderEmptyFilms() {
