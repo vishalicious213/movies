@@ -15,4 +15,11 @@ header {
     justify-content: space-between;
     align-items: baseline;
     background-image: url(./img/header-img.jpg);
+    padding: 3rem 2rem;
+}
+
+main {
+    outline: 1px solid red;
+    background-color: #121212;
+    min-height: 70vh;
 }
