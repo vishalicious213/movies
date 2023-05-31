@@ -9,6 +9,8 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+/* HEADER / SEARCH */
+
 #container {
     position: relative;
     background-image: url(./img/header-img.jpg);
@@ -56,7 +58,17 @@ header {
     background-color: #5a5a5a;
 }
 
+/* MAIN / RESULTS */
+
 main {
     background-color: #121212;
     min-height: 70vh;
+    display: flex;
+}
+
+#filler {
+    text-align: center;
+    color: #2e2e2f;
+    align-self: center;
+    margin: auto;
 }
