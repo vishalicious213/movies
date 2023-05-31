@@ -14,7 +14,6 @@ body {
 }
 
 header {
-    outline: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -27,11 +26,36 @@ header {
     justify-content: center;
     position: absolute;
     width: 100%;
-    bottom: -.5rem;
+    bottom: -1rem;
+}
+
+#search-field {
+    color: #a5a5a5;
+    background-color: #2e2e2f;
+    outline: none;
+    border: none;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+    padding: .5rem;
+    width: 65%;
+}
+
+#search-btn {
+    color: white;
+    background-color: #4b4b4b;
+    outline: none;
+    border: none;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    padding: .5rem 2rem;
+}
+
+#search-btn:hover {
+    cursor: pointer;
+    background-color: #5a5a5a;
 }
 
 main {
-    outline: 1px solid red;
     background-color: #121212;
     min-height: 70vh;
 }
