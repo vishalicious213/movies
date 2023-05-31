@@ -6,7 +6,9 @@ let searchResults = []
 
 // ⬇️ EVENT LISTENERS ⬇️
 
-searchBtn.addEventListener("click", submitSearch)
+searchBtn.addEventListener("click", function() {
+    submitSearch()
+})
 
 // ⬇️ EVENT HANDLERS ⬇️
 
@@ -15,9 +17,8 @@ function submitSearch() {
     fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=8c98ceb6&s=${searchField.value}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data)
-            searchResults = data.search
-            console.log(searchResults)
+            searchResults = data.Search
+            renderSearchResults()
         })
 }
 
@@ -30,6 +31,10 @@ function renderEmptyFilms() {
             <p>Start exploring</p>
         </div>
     `
+}
+
+function renderSearchResults() {
+    console.log(searchResults)
 }
 
 renderEmptyFilms()
