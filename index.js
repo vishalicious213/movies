@@ -2,7 +2,7 @@ const searchField = document.getElementById("search-field")
 const searchBtn = document.getElementById("search-btn")
 const main = document.getElementById("main")
 
-let searchResults = []
+let filmsArray = []
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -17,8 +17,8 @@ function submitSearch() {
     fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
         .then(res => res.json())
         .then(data => {
-            searchResults = data.Search
-            renderSearchResults()
+            filmsArray = data.Search
+            renderfilmsArray()
         })
 }
 
@@ -28,8 +28,8 @@ function getFilm(id) {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            // searchResults = data.Search
-            // renderSearchResults()
+            // filmsArray = data.Search
+            // renderfilmsArray()
         })
 }
 
@@ -44,9 +44,9 @@ function renderEmptyFilms() {
     `
 }
 
-function renderSearchResults() {
-    console.log(searchResults)
-    getFilm(searchResults[0].imdbID)
+function renderfilmsArray() {
+    console.log(filmsArray)
+    getFilm(filmsArray[0].imdbID)
 }
 
 renderEmptyFilms()
