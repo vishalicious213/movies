@@ -9,6 +9,10 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+#container {
+    position: relative;
+}
+
 header {
     outline: 1px solid red;
     display: flex;
@@ -16,6 +20,14 @@ header {
     align-items: baseline;
     background-image: url(./img/header-img.jpg);
     padding: 3rem 2rem;
+}
+
+#search-section {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: -.5rem;
 }
 
 main {
