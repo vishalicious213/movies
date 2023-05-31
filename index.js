@@ -3,6 +3,10 @@ const searchBtn = document.getElementById("search-btn")
 
 // ⬇️ EVENT LISTENERS ⬇️
 
-searchBtn.addEventListener("click", function() {
-    console.log("clicked")
-})
+searchBtn.addEventListener("click", submitSearch)
+
+// ⬇️ EVENT HANDLERS ⬇️
+
+function submitSearch() {
+    console.log(searchField.value)    
+}
