@@ -1,5 +1,6 @@
 body {
-    background-color: #E5E5E5;
+    /* background-color: #E5E5E5; */
+    background-color: #2e2e2f;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,7 +22,8 @@ header {
     justify-content: space-between;
     align-items: baseline;
     background-color: rgba(0, 0, 0, .7);
-    padding: 3rem 2rem;
+    padding: 3rem 2.25rem;
+    color: white;
 }
 
 #search-section {
