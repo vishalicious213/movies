@@ -42,21 +42,22 @@ function renderEmptyFilms() {
 
 function renderFilmsArray() {
     console.log(filmsArray)
+    let htmlString = ""
     main.innerHTML = ""
 
-    // filmsArray.forEach(item => {
-    //     console.log(item)
-    //     // main.innerHTML += `
-    //     //     <div class="film">
-    //     //         <img src="${item.Poster}">
-    //     //         <h2>${item.Title}</h2>
-    //     //         <p>${item.imdbRating}</p>
-    //     //         <p>${item.Runtime}</p>
-    //     //         <p>${item.Genre}</p>
-    //     //         <p>${item.Plot}</p>
-    //     //     </div>
-    //     // `
-    // })
+    filmsArray.forEach(item => {
+        console.log(item)
+        // main.innerHTML += `
+        //     <div class="film">
+        //         <img src="${item.Poster}">
+        //         <h2>${item.Title}</h2>
+        //         <p>${item.imdbRating}</p>
+        //         <p>${item.Runtime}</p>
+        //         <p>${item.Genre}</p>
+        //         <p>${item.Plot}</p>
+        //     </div>
+        // `
+    })
 }
 
 renderEmptyFilms()
