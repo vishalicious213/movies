@@ -29,11 +29,6 @@ async function getFilmDetails(id) {
     filmsArray.push(data)
 }
 
-function buildHTML(data) {
-    filmsHtml += `<div>${data.Title}</div>`
-    console.log(filmsHtml)
-}
-
 // ⬇️ RENDER APP ⬇️
 
 function renderEmptyFilms() {
