@@ -46,20 +46,22 @@ function renderFilmsArray() {
     main.innerHTML = ""
 
     filmsArray.forEach(item => {
-        console.log(item)
+        // console.log(item)
         htmlString += `
             <div class="film">
                 <div class="poster">
                     <img src="${item.Poster}">
                 </div>
                 <div class="film-details-container">
-                    <h2>${item.Title}</h2>
+                    <div class="title-rating">
+                        <h2>${item.Title}</h2>
+                        <p><span class="star">&#9734;</span> ${item.imdbRating}</p>
+                    </div>
                     <div class="film-details">
-                        <p>${item.imdbRating}</p>
                         <p>${item.Runtime}</p>
                         <p>${item.Genre}</p>
                     </div>
-                    <p>${item.Plot}</p>
+                    <p class="plot">${item.Plot}</p>
                 </div>
             </div>
         `
