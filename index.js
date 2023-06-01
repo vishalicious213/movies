@@ -54,7 +54,7 @@ function renderFilmsArray() {
                 </div>
                 <div class="film-details-container">
                     <div class="title-rating">
-                        <h2>${item.Title}</h2>
+                        <h2>${item.Title} <span class="year">(${item.Year})</span></h2>
                         <p><span class="star">&#9734;</span> ${item.imdbRating}</p>
                     </div>
                     <div class="film-details">

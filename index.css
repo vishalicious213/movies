@@ -132,6 +132,11 @@ main {
     margin-right: .5rem;
 }
 
+.year {
+    font-size: .9rem;
+    color: #a5a5a5;
+}
+
 .star {
     /* outline: 1px solid greenyellow; */
     color: #FEC654;
