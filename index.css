@@ -107,24 +107,43 @@ main {
 }
 
 .title-rating {
+    /* outline: 1px solid yellowgreen; */
     display: flex;
     align-items: baseline;
+    box-sizing: border-box;
 }
 
 .title-rating h2 {
+    /* outline: 1px solid greenyellow; */
     font-size: 1.1rem;
     font-weight: 500;
+    margin: 0;
     margin-right: 1rem;
 }
 
 .star {
+    /* outline: 1px solid greenyellow; */
     color: #FEC654;
+}
+
+.title-rating p {
+    /* outline: 1px solid greenyellow; */
+    margin: 0;
 }
 
 .film-details {
     /* outline: 1px solid green; */
+    display: flex;
+    font-size: .75rem;
+}
+
+.film-details p {
+    width: 33%;
+    margin: .75rem 0 .5rem;
 }
 
 .plot {
     color: #a5a5a5;
+    font-size: .75rem;
+    margin: 0;
 }
