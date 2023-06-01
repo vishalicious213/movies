@@ -49,12 +49,18 @@ function renderFilmsArray() {
         console.log(item)
         htmlString += `
             <div class="film">
-                <img src="${item.Poster}">
-                <h2>${item.Title}</h2>
-                <p>${item.imdbRating}</p>
-                <p>${item.Runtime}</p>
-                <p>${item.Genre}</p>
-                <p>${item.Plot}</p>
+                <div class="poster">
+                    <img src="${item.Poster}">
+                </div>
+                <div class="film-details-container">
+                    <h2>${item.Title}</h2>
+                    <div class="film-details">
+                        <p>${item.imdbRating}</p>
+                        <p>${item.Runtime}</p>
+                        <p>${item.Genre}</p>
+                    </div>
+                    <p>${item.Plot}</p>
+                </div>
             </div>
         `
     })
