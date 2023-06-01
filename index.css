@@ -66,6 +66,7 @@ main {
     background-color: #121212;
     min-height: 70vh;
     display: flex;
+    flex-wrap: wrap;
 }
 
 #filler {
@@ -79,14 +80,21 @@ main {
 
 .film {
     outline: 1px solid red;
+    display: flex;
 }
 
 .poster {
     outline: 1px solid orange;
+    width: 25%;
+}
+
+.poster img {
+    width: 100%;
 }
 
 .film-details-container {
-    outline: 1px solid yellow`;
+    outline: 1px solid yellow;
+    width: 75%;
 }
 
 .film-details {
