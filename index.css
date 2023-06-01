@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    max-width: 550px;
+    /* max-width: 550px; */
     margin: auto;
     font-family: 'Inter', sans-serif;
     font-family: 'Josefin Sans', sans-serif;
@@ -70,6 +70,10 @@ main {
     flex-wrap: wrap;
     align-items: center;
     padding: 2rem;
+    width: 90%;
+    margin: auto;
+    gap: 1rem;
+    box-sizing: border-box;
 
 }
 
@@ -87,6 +91,7 @@ main {
     display: flex;
     border-bottom: 1px solid #2c2c2c;
     padding: 1rem 0;
+    max-width: 538px;
 }
 
 .poster {
@@ -118,7 +123,7 @@ main {
     font-size: 1.1rem;
     font-weight: 500;
     margin: 0;
-    margin-right: 1rem;
+    margin-right: .5rem;
 }
 
 .star {
@@ -129,6 +134,7 @@ main {
 .title-rating p {
     /* outline: 1px solid greenyellow; */
     margin: 0;
+    font-size: .75rem;
 }
 
 .film-details {
@@ -144,6 +150,7 @@ main {
 
 .plot {
     color: #a5a5a5;
-    font-size: .75rem;
+    font-size: .8rem;
+    font-weight: 400;
     margin: 0;
 }
