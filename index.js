@@ -47,17 +47,19 @@ function renderFilmsArray() {
 
     filmsArray.forEach(item => {
         console.log(item)
-        // main.innerHTML += `
-        //     <div class="film">
-        //         <img src="${item.Poster}">
-        //         <h2>${item.Title}</h2>
-        //         <p>${item.imdbRating}</p>
-        //         <p>${item.Runtime}</p>
-        //         <p>${item.Genre}</p>
-        //         <p>${item.Plot}</p>
-        //     </div>
-        // `
+        htmlString += `
+            <div class="film">
+                <img src="${item.Poster}">
+                <h2>${item.Title}</h2>
+                <p>${item.imdbRating}</p>
+                <p>${item.Runtime}</p>
+                <p>${item.Genre}</p>
+                <p>${item.Plot}</p>
+            </div>
+        `
     })
+
+    main.innerHTML = htmlString
 }
 
 renderEmptyFilms()
