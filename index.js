@@ -13,28 +13,21 @@ searchBtn.addEventListener("click", function() {
 
 // ⬇️ EVENT HANDLERS ⬇️
 
-function getFilms() {
-    console.log(searchField.value)    
-    fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
-        .then(res => res.json())
-        .then(data => {
-            let searchResults = data.Search
-            searchResults.forEach(item => getFilmDetails(item.imdbID))
-            // renderfilmsArray()
-        })
+async function getFilms() {
+    const response = await fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
+    const data = await response.json()
+    const responseArray = data.Search
+
+    responseArray.forEach(item => getFilmDetails(item.imdbID))
+    // console.log(responseArray)
+    console.log(filmsArray)
 }
 
-function getFilmDetails(id) {
-    console.log(id)    
-    fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&i=${id}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            filmsArray += data
-            // currentFilm = data
-            // filmsArray = data.Search
-            // renderfilmsArray()
-        })
+async function getFilmDetails(id) {
+    const response = await fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&i=${id}`)
+    const data = await response.json()
+    filmsArray.push(data)
+    // console.log(filmsArray)
 }
 
 // ⬇️ RENDER APP ⬇️
