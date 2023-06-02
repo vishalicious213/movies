@@ -82,4 +82,12 @@ function renderFilmsArray() {
     main.innerHTML = htmlString
 }
 
+function renderWatchlist() {
+    main.innerHTML = ""
+
+    main.innerHTML = `
+        <div>WATCHLIST</div>
+    `
+}
+
 renderEmptyFilms()
