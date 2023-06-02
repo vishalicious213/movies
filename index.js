@@ -11,6 +11,19 @@ searchBtn.addEventListener("click", function() {
     getFilms()
 })
 
+toggle.addEventListener("click", function() {
+    if (toggle.textContent === "My Watchlist") {
+        console.log("go to watchlist")
+        renderWatchlist()
+    } else if (toggle.textContent === "Search for movies" && filmsArray.length === 0) {
+        console.log("go to empty films")
+        renderEmptyFilms()
+    } else if (toggle.textContent === "Search for movies" && filmsArray.length > 0) {
+        console.log("go to film search")
+        renderFilmsArray()
+    }
+})
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 async function getFilms() {
@@ -38,6 +51,7 @@ async function getFilmDetails(id) {
 // ⬇️ RENDER APP ⬇️
 
 function renderEmptyFilms() {
+    toggle.textContent = "My Watchlist"
     main.innerHTML = `
         <div id="filler">
             <img src="./img/reel.png" alt="">
@@ -47,6 +61,7 @@ function renderEmptyFilms() {
 }
 
 function renderFilmNotFound() {
+    toggle.textContent = "Search for movies"
     main.innerHTML = `
         <div id="not-found">
             <p>Unable to find what you're looking for. Please try another search.</p>
@@ -55,6 +70,7 @@ function renderFilmNotFound() {
 }
 
 function renderFilmsArray() {
+    toggle.textContent = "My Watchlist"
     let htmlString = ""
     main.innerHTML = ""
 
@@ -84,6 +100,7 @@ function renderFilmsArray() {
 }
 
 function renderWatchlist() {
+    toggle.textContent = "Search for movies"
     main.innerHTML = ""
 
     main.innerHTML = `
