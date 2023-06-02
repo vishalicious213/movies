@@ -32,10 +32,11 @@ toggle.addEventListener("click", function() {
 main.addEventListener("click", function(e) {
     if (e.target.dataset.id) {
         if (watchlistArray.includes(e.target.dataset.id)) {
-            console.log("already there")
+            // console.log("already there")
+            return
         } else {
             watchlistArray.push(e.target.dataset.id)
-            console.log(watchlistArray)
+            // console.log(watchlistArray)
         }
     }
 })
@@ -151,7 +152,7 @@ function renderWatchlist() {
                     <div class="film-details">
                         <p class="runtime">${filmDetails.Runtime}</p>
                         <p class="genre">${filmDetails.Genre}</p>
-                        <p class="watchlist-add" data-id="${filmDetails.imdbID}"><span class="plus">+</span> Watchlist</p>
+                        <p class="watchlist-add" data-id="${filmDetails.imdbID}"><span class="plus">-</span> Remove</p>
                     </div>
                     <p class="plot">${filmDetails.Plot}</p>
                 </div>
