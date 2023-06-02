@@ -30,7 +30,9 @@ toggle.addEventListener("click", function() {
 
 // listen for clicks on a film's 'add to watchlist' button
 main.addEventListener("click", function(e) {
-    // if (e.target === )
+    if (e.target.dataset.id) {
+        console.log(e.target.dataset.id)
+    }
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
