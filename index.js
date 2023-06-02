@@ -24,6 +24,7 @@ async function getFilms() {
     } else {
         const responseArray = data.Search
         await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
+        searchField.value = ""
         renderFilmsArray()
     }
 }
