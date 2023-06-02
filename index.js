@@ -14,12 +14,17 @@ searchBtn.addEventListener("click", function() {
 // ⬇️ EVENT HANDLERS ⬇️
 
 async function getFilms() {
+    console.log(searchField.value)
     const response = await fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
-    const responseArray = data.Search
 
-    await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
-    renderFilmsArray()
+    if (data.Response === "False") {
+        console.log(data)
+    } else {
+        const responseArray = data.Search
+        await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
+        renderFilmsArray()
+    }
 }
 
 async function getFilmDetails(id) {
