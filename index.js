@@ -20,6 +20,7 @@ async function getFilms() {
 
     if (data.Response === "False") {
         console.log(data)
+        renderFilmNotFound()
     } else {
         const responseArray = data.Search
         await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
@@ -41,6 +42,14 @@ function renderEmptyFilms() {
         <div id="filler">
             <img src="./img/reel.png" alt="">
             <p>Start exploring</p>
+        </div>
+    `
+}
+
+function renderFilmNotFound() {
+    main.innerHTML = `
+        <div id="not-found">
+            <p>Unable to find what you're looking for. Please try another search.</p>
         </div>
     `
 }
