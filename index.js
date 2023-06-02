@@ -58,8 +58,9 @@ function renderFilmsArray() {
                         <p><span class="star">&#9733;</span> ${item.imdbRating}</p>
                     </div>
                     <div class="film-details">
-                        <p>${item.Runtime}</p>
-                        <p>${item.Genre}</p>
+                        <p class="runtime">${item.Runtime}</p>
+                        <p class="genre">${item.Genre}</p>
+                        <p class="watchlist"><span class="plus">+</span> Watchlist</p>
                     </div>
                     <p class="plot">${item.Plot}</p>
                 </div>

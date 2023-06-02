@@ -93,7 +93,6 @@ main {
 /* FILM */
 
 .film {
-    /* outline: 1px solid red; */
     display: flex;
     border-bottom: 1px solid #2c2c2c;
     padding: 1rem 0;
@@ -101,7 +100,6 @@ main {
 }
 
 .poster {
-    /* outline: 1px solid orange; */
     width: 25%;
     display: flex;
     align-items: center;
@@ -112,20 +110,17 @@ main {
 }
 
 .film-details-container {
-    /* outline: 1px solid yellow; */
     width: 75%;
     padding: 1rem;
 }
 
 .title-rating {
-    /* outline: 1px solid yellowgreen; */
     display: flex;
     align-items: baseline;
     box-sizing: border-box;
 }
 
 .title-rating h2 {
-    /* outline: 1px solid greenyellow; */
     font-size: 1.1rem;
     font-weight: 500;
     margin: 0;
@@ -138,25 +133,40 @@ main {
 }
 
 .star {
-    /* outline: 1px solid greenyellow; */
     color: #FEC654;
 }
 
 .title-rating p {
-    /* outline: 1px solid greenyellow; */
     margin: 0;
     font-size: .75rem;
 }
 
 .film-details {
-    /* outline: 1px solid green; */
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     font-size: .75rem;
 }
 
 .film-details p {
-    width: 33%;
     margin: .75rem 0 .5rem;
+}
+
+.watchlist {
+    text-align: end;
+    min-width: 5rem;
+}
+
+.runtime {
+    min-width: 3rem;
+}
+
+.plus {
+    background: whitesmoke;
+    color: #121212;
+    width: .75rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
 }
 
 .plot {
