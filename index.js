@@ -1,6 +1,7 @@
 const searchField = document.getElementById("search-field")
 const searchBtn = document.getElementById("search-btn")
 const main = document.getElementById("main")
+const toggle = document.getElementById("list-toggle")
 
 let filmsArray = []
 
