@@ -14,7 +14,6 @@ searchBtn.addEventListener("click", function() {
 // ⬇️ EVENT HANDLERS ⬇️
 
 async function getFilms() {
-    console.log(searchField.value)
     const response = await fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
 
@@ -56,12 +55,10 @@ function renderFilmNotFound() {
 }
 
 function renderFilmsArray() {
-    console.log(filmsArray)
     let htmlString = ""
     main.innerHTML = ""
 
     filmsArray.forEach(item => {
-        // console.log(item)
         htmlString += `
             <div class="film">
                 <div class="poster">
