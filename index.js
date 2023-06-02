@@ -3,7 +3,6 @@ const searchBtn = document.getElementById("search-btn")
 const main = document.getElementById("main")
 
 let filmsArray = []
-let currentFilm = {}
 
 // ⬇️ EVENT LISTENERS ⬇️
 
