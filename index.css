@@ -8,7 +8,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
-/* HEADER / SEARCH */
+/* HEADER */
 
 #container {
     position: relative;
@@ -42,7 +42,9 @@ header {
     transform: scale(1.1);
 }
 
-#search-section {
+/* SEARCH */
+
+.search-section {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -50,7 +52,7 @@ header {
     bottom: -1rem;
 }
 
-#search-field {
+.search-field {
     color: #a5a5a5;
     background-color: #2e2e2f;
     outline: none;
@@ -61,7 +63,7 @@ header {
     width: 65%;
 }
 
-#search-btn {
+.search-btn {
     color: white;
     background-color: #4b4b4b;
     outline: none;
@@ -71,7 +73,7 @@ header {
     padding: .75rem 2rem;
 }
 
-#search-btn:hover {
+.search-btn:hover {
     cursor: pointer;
     background-color: #5a5a5a;
 }
@@ -196,4 +198,10 @@ main {
     font-size: .8rem;
     font-weight: 400;
     margin: 0;
+}
+
+/* UTILITY */
+
+.hidden {
+    display: none;
 }

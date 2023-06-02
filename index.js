@@ -1,3 +1,4 @@
+const searchSection = document.getElementById("search-section")
 const searchField = document.getElementById("search-field")
 const searchBtn = document.getElementById("search-btn")
 const main = document.getElementById("main")
@@ -7,10 +8,12 @@ let filmsArray = []
 
 // ⬇️ EVENT LISTENERS ⬇️
 
+// listen for clicks on search button
 searchBtn.addEventListener("click", function() {
     getFilms()
 })
 
+// listen for clicks on watchlist/search text in header
 toggle.addEventListener("click", function() {
     if (toggle.textContent === "My Watchlist") {
         console.log("go to watchlist")
@@ -22,6 +25,11 @@ toggle.addEventListener("click", function() {
         console.log("go to film search")
         renderFilmsArray()
     }
+})
+
+// listen for clicks on a film's 'add to watchlist' button
+main.addEventListener("click", function(e) {
+    // if (e.target === )
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -52,6 +60,7 @@ async function getFilmDetails(id) {
 
 function renderEmptyFilms() {
     toggle.textContent = "My Watchlist"
+    searchSection.classList.remove("hidden")
     main.innerHTML = `
         <div id="filler">
             <img src="./img/reel.png" alt="">
@@ -61,7 +70,8 @@ function renderEmptyFilms() {
 }
 
 function renderFilmNotFound() {
-    toggle.textContent = "Search for movies"
+    toggle.textContent = "My Watchlist"
+    searchSection.classList.remove("hidden")
     main.innerHTML = `
         <div id="not-found">
             <p>Unable to find what you're looking for. Please try another search.</p>
@@ -71,6 +81,7 @@ function renderFilmNotFound() {
 
 function renderFilmsArray() {
     toggle.textContent = "My Watchlist"
+    searchSection.classList.remove("hidden")
     let htmlString = ""
     main.innerHTML = ""
 
@@ -88,7 +99,7 @@ function renderFilmsArray() {
                     <div class="film-details">
                         <p class="runtime">${item.Runtime}</p>
                         <p class="genre">${item.Genre}</p>
-                        <p class="watchlist"><span class="plus">+</span> Watchlist</p>
+                        <p class="watchlist" data-id="${item.imdbID}"><span class="plus">+</span> Watchlist</p>
                     </div>
                     <p class="plot">${item.Plot}</p>
                 </div>
@@ -101,6 +112,7 @@ function renderFilmsArray() {
 
 function renderWatchlist() {
     toggle.textContent = "Search for movies"
+    searchSection.classList.add("hidden")
     main.innerHTML = ""
 
     main.innerHTML = `
