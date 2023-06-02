@@ -223,6 +223,10 @@ main {
     border-radius: 50%;
 }
 
+#empty-add:hover {
+    cursor: pointer;
+}
+
 /* UTILITY */
 
 .hidden {

@@ -122,9 +122,10 @@ function renderWatchlist() {
         main.innerHTML = `
             <section class="empty-watchlist">
                 <div id="empty-msg">Your watchlist is looking a little empty...</div>
-                <div><span id="add-msg">+</span> Let's add some movies!</div>            
+                <div id="empty-add"><span id="add-msg">+</span> Let's add some movies!</div>            
             </section>
-        `        
+        `
+        document.getElementById("empty-add").addEventListener("click", renderFilmsArray)
     } else {
         main.innerHTML = `
             <div>WATCHLIST</div>
