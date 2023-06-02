@@ -156,6 +156,11 @@ main {
     min-width: 5rem;
 }
 
+.watchlist:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .runtime {
     min-width: 3rem;
 }
