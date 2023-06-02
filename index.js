@@ -5,6 +5,7 @@ const main = document.getElementById("main")
 const toggle = document.getElementById("list-toggle")
 
 let filmsArray = []
+let watchlistArray = []
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -115,9 +116,19 @@ function renderWatchlist() {
     searchSection.classList.add("hidden")
     main.innerHTML = ""
 
-    main.innerHTML = `
-        <div>WATCHLIST</div>
-    `
+    if (watchlistArray.length === 0) {
+        main.innerHTML = `
+            <section class="empty-watchlist">
+                <div>Your watchlist is looking a little empty...</div>
+                <div><span>+</span> Let's add some movies!</div>            
+            </section>
+        `        
+    } else {
+        main.innerHTML = `
+            <div>WATCHLIST</div>
+        `
+    }
+
 }
 
 renderEmptyFilms()
