@@ -31,7 +31,12 @@ toggle.addEventListener("click", function() {
 // listen for clicks on a film's 'add to watchlist' button
 main.addEventListener("click", function(e) {
     if (e.target.dataset.id) {
-        console.log(e.target.dataset.id)
+        if (watchlistArray.includes(e.target.dataset.id)) {
+            console.log("already there")
+        } else {
+            watchlistArray.push(e.target.dataset.id)
+            console.log(watchlistArray)
+        }
     }
 })
 
