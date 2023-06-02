@@ -132,9 +132,34 @@ function renderWatchlist() {
         `
         document.getElementById("empty-add").addEventListener("click", renderFilmsArray)
     } else {
-        main.innerHTML = `
-            <div>WATCHLIST</div>
+        let htmlString = ""
+
+        watchlistArray.forEach(film => {
+            let filmDetails = filmsArray.find(item => item.imdbID === film)
+            // console.log(filmDetails)
+
+            htmlString += `
+            <div class="film">
+                <div class="poster">
+                    <img src="${filmDetails.Poster}">
+                </div>
+                <div class="film-details-container">
+                    <div class="title-rating">
+                        <h2>${filmDetails.Title} <span class="year">(${filmDetails.Year})</span></h2>
+                        <p><span class="star">&#9733;</span> ${filmDetails.imdbRating}</p>
+                    </div>
+                    <div class="film-details">
+                        <p class="runtime">${filmDetails.Runtime}</p>
+                        <p class="genre">${filmDetails.Genre}</p>
+                        <p class="watchlist-add" data-id="${filmDetails.imdbID}"><span class="plus">+</span> Watchlist</p>
+                    </div>
+                    <p class="plot">${filmDetails.Plot}</p>
+                </div>
+            </div>
         `
+        })
+
+        main.innerHTML = htmlString
     }
 
 }
