@@ -170,12 +170,12 @@ main {
     margin: .75rem 0 .5rem;
 }
 
-.watchlist {
+.watchlist-add {
     text-align: end;
     min-width: 5rem;
 }
 
-.watchlist:hover {
+.watchlist-add:hover {
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -198,6 +198,29 @@ main {
     font-size: .8rem;
     font-weight: 400;
     margin: 0;
+}
+
+/* WATCHLIST */
+
+.empty-watchlist {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#empty-msg {
+    color: #787878;
+    margin-bottom: 1rem;
+}
+
+#add-msg {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    width: 1rem;
+    text-align: center;
+    border-radius: 50%;
 }
 
 /* UTILITY */

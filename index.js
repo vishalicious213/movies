@@ -102,7 +102,7 @@ function renderFilmsArray() {
                     <div class="film-details">
                         <p class="runtime">${item.Runtime}</p>
                         <p class="genre">${item.Genre}</p>
-                        <p class="watchlist" data-id="${item.imdbID}"><span class="plus">+</span> Watchlist</p>
+                        <p class="watchlist-add" data-id="${item.imdbID}"><span class="plus">+</span> Watchlist</p>
                     </div>
                     <p class="plot">${item.Plot}</p>
                 </div>
@@ -121,8 +121,8 @@ function renderWatchlist() {
     if (watchlistArray.length === 0) {
         main.innerHTML = `
             <section class="empty-watchlist">
-                <div>Your watchlist is looking a little empty...</div>
-                <div><span>+</span> Let's add some movies!</div>            
+                <div id="empty-msg">Your watchlist is looking a little empty...</div>
+                <div><span id="add-msg">+</span> Let's add some movies!</div>            
             </section>
         `        
     } else {
