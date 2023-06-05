@@ -87,11 +87,9 @@ function removeFromWatchlist(movie) {
 
 function getWatchlist() {
     if (localWatchlist) {
-        // console.log(localWatchlist)
         watchlistArray = JSON.parse(localStorage.getItem("watchlist"))
-        // console.log("from getWatchlist", watchlistArray)
     } else {
-        console.log("no watchlist saved")
+        return
     }
 }
 
