@@ -39,6 +39,10 @@ main.addEventListener("click", function(e) {
             // console.log(watchlistArray)
         }
     }
+
+    if (e.target.dataset.remove) {
+        console.log("remove", e.target.dataset.remove)
+    }
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -152,7 +156,7 @@ function renderWatchlist() {
                     <div class="film-details">
                         <p class="runtime">${filmDetails.Runtime}</p>
                         <p class="genre">${filmDetails.Genre}</p>
-                        <p class="watchlist-add" data-id="${filmDetails.imdbID}"><span class="plus">-</span> Remove</p>
+                        <p class="watchlist-add" data-remove="${filmDetails.imdbID}"><span class="plus">-</span> Remove</p>
                     </div>
                     <p class="plot">${filmDetails.Plot}</p>
                 </div>
