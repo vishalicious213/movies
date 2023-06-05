@@ -17,13 +17,10 @@ searchBtn.addEventListener("click", function() {
 // listen for clicks on watchlist/search text in header
 toggle.addEventListener("click", function() {
     if (toggle.textContent === "My Watchlist") {
-        console.log("go to watchlist")
         renderWatchlist()
     } else if (toggle.textContent === "Search for movies" && filmsArray.length === 0) {
-        console.log("go to empty films")
         renderEmptyFilms()
     } else if (toggle.textContent === "Search for movies" && filmsArray.length > 0) {
-        console.log("go to film search")
         renderFilmsArray()
     }
 })
@@ -33,11 +30,9 @@ main.addEventListener("click", function(e) {
     // add movie to watchlist
     if (e.target.dataset.id) {
         if (watchlistArray.includes(e.target.dataset.id)) {
-            // console.log("already there")
             return
         } else {
             watchlistArray.push(e.target.dataset.id)
-            // console.log(watchlistArray)
         }
     }
 
@@ -56,7 +51,6 @@ async function getFilms() {
     const data = await response.json()
 
     if (data.Response === "False") {
-        console.log(data)
         renderFilmNotFound()
     } else {
         const responseArray = data.Search
@@ -145,7 +139,6 @@ function renderWatchlist() {
 
         watchlistArray.forEach(film => {
             let filmDetails = filmsArray.find(item => item.imdbID === film)
-            // console.log(filmDetails)
 
             htmlString += `
             <div class="film">
@@ -170,7 +163,6 @@ function renderWatchlist() {
 
         main.innerHTML = htmlString
     }
-
 }
 
 renderEmptyFilms()
