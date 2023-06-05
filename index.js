@@ -169,8 +169,6 @@ function renderWatchlist() {
         let htmlString = ""
 
         watchlistArray.forEach(film => {
-            // let filmDetails = watchlistArray.find(item => item.imdbID === film)
-
             htmlString += `
             <div class="film">
                 <div class="poster">
