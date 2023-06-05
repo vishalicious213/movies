@@ -73,6 +73,15 @@ function addToWatchlist(id) {
     localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
 }
 
+function getWatchlist() {
+    if (localWatchlist) {
+        console.log(localWatchlist)
+        watchlistArray = JSON.parse(localStorage.getItem("watchlist"))
+    } else {
+        console.log("no watchlist saved")
+    }
+}
+
 // ⬇️ RENDER APP ⬇️
 
 function renderEmptyFilms() {
@@ -132,12 +141,7 @@ function renderWatchlist() {
     searchSection.classList.add("hidden")
     main.innerHTML = ""
 
-    if (localWatchlist) {
-        console.log(localWatchlist)
-        // watchlistArray = 
-    } else {
-        console.log("no watchlist saved")
-    }
+    getWatchlist()
 
     if (watchlistArray.length === 0) {
         main.innerHTML = `
