@@ -39,8 +39,10 @@ main.addEventListener("click", function(e) {
 
     // remove movie from watchlist
     if (e.target.dataset.remove) {
-        const target = watchlistArray.indexOf(e.target.dataset.remove)
-        watchlistArray.splice(target, 1)
+        const target = watchlistArray.find(item => item.imdbID === e.target.dataset.remove)
+        const targetIndex = watchlistArray.indexOf(target)
+        watchlistArray.splice(targetIndex, 1)
+        localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
         renderWatchlist()
     }
 })
@@ -76,9 +78,9 @@ function addToWatchlist(id) {
 
 function getWatchlist() {
     if (localWatchlist) {
-        console.log(localWatchlist)
+        // console.log(localWatchlist)
         watchlistArray = JSON.parse(localStorage.getItem("watchlist"))
-        console.log("from getWatchlist", watchlistArray)
+        // console.log("from getWatchlist", watchlistArray)
     } else {
         console.log("no watchlist saved")
     }
