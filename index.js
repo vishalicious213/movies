@@ -28,8 +28,9 @@ toggle.addEventListener("click", function() {
     }
 })
 
-// listen for clicks on a film's 'add to watchlist' button
+// listen for clicks on a film's 'watchlist' or 'remove' button
 main.addEventListener("click", function(e) {
+    // add movie to watchlist
     if (e.target.dataset.id) {
         if (watchlistArray.includes(e.target.dataset.id)) {
             // console.log("already there")
@@ -40,8 +41,11 @@ main.addEventListener("click", function(e) {
         }
     }
 
+    // remove movie from watchlist
     if (e.target.dataset.remove) {
-        console.log("remove", e.target.dataset.remove)
+        const target = watchlistArray.indexOf(e.target.dataset.remove)
+        watchlistArray.splice(target, 1)
+        renderWatchlist()
     }
 })
 
