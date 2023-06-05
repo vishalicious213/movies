@@ -39,11 +39,12 @@ main.addEventListener("click", function(e) {
 
     // remove movie from watchlist
     if (e.target.dataset.remove) {
-        const target = watchlistArray.find(item => item.imdbID === e.target.dataset.remove)
-        const targetIndex = watchlistArray.indexOf(target)
-        watchlistArray.splice(targetIndex, 1)
-        localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
-        renderWatchlist()
+        removeFromWatchlist(e.target.dataset.remove)
+        // const target = watchlistArray.find(item => item.imdbID === e.target.dataset.remove)
+        // const targetIndex = watchlistArray.indexOf(target)
+        // watchlistArray.splice(targetIndex, 1)
+        // localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
+        // renderWatchlist()
     }
 })
 
@@ -74,6 +75,14 @@ function addToWatchlist(id) {
     let filmToAdd = filmsArray.find(item => item.imdbID === id)
     watchlistArray.push(filmToAdd)
     localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
+}
+
+function removeFromWatchlist(movie) {
+    const target = watchlistArray.find(item => item.imdbID === movie)
+    const targetIndex = watchlistArray.indexOf(target)
+    watchlistArray.splice(targetIndex, 1)
+    localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
+    renderWatchlist()
 }
 
 function getWatchlist() {
