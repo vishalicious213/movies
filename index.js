@@ -15,6 +15,13 @@ searchBtn.addEventListener("click", function() {
     getFilms()
 })
 
+// listen for enter key to be pressed
+searchField.addEventListener("keypress", function(e) {
+    if (searchField.value && e.key === "Enter") {
+        getFilms()
+    }
+})
+
 // listen for clicks on watchlist/search text in header
 toggle.addEventListener("click", function() {
     if (toggle.textContent === "My Watchlist") {
