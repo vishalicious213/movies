@@ -18,7 +18,7 @@ body {
 header {
     background-color: rgba(0, 0, 0, .7);
     padding: 3rem 2.25rem;
-    color: white;
+    color: gainsboro;
 }
 
 #header-row {
@@ -30,6 +30,7 @@ header {
 
 #header-row h1 {
     min-width: 14rem;
+    color: white;
 }
 
 #list-toggle {
@@ -39,7 +40,7 @@ header {
 
 #list-toggle:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    color: white;
 }
 
 /* SEARCH */
