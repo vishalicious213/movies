@@ -6,6 +6,7 @@ const toggle = document.getElementById("list-toggle")
 
 let filmsArray = []
 let watchlistArray = []
+let localWatchlist = localStorage.getItem("watchlist")
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -125,6 +126,12 @@ function renderWatchlist() {
     toggle.textContent = "Search for movies"
     searchSection.classList.add("hidden")
     main.innerHTML = ""
+
+    if (localWatchlist) {
+        console.log(localWatchlist)
+    } else {
+        console.log("no watchlist saved")
+    }
 
     if (watchlistArray.length === 0) {
         main.innerHTML = `
