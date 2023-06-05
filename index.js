@@ -3,6 +3,7 @@ const searchField = document.getElementById("search-field")
 const searchBtn = document.getElementById("search-btn")
 const main = document.getElementById("main")
 const toggle = document.getElementById("list-toggle")
+const title = document.getElementById("header-title")
 
 let filmsArray = []
 let watchlistArray = []
@@ -100,6 +101,7 @@ function getWatchlist() {
 
 function renderEmptyFilms() {
     toggle.textContent = "My Watchlist"
+    title.textContent = "Find your film"
     searchSection.classList.remove("hidden")
     main.innerHTML = `
         <div id="filler">
@@ -111,6 +113,7 @@ function renderEmptyFilms() {
 
 function renderFilmNotFound() {
     toggle.textContent = "My Watchlist"
+    title.textContent = "Find your film"
     searchSection.classList.remove("hidden")
     main.innerHTML = `
         <div id="not-found">
@@ -121,6 +124,7 @@ function renderFilmNotFound() {
 
 function renderFilmsArray() {
     toggle.textContent = "My Watchlist"
+    title.textContent = "Find your film"
     searchSection.classList.remove("hidden")
     let htmlString = ""
     main.innerHTML = ""
@@ -152,6 +156,7 @@ function renderFilmsArray() {
 
 function renderWatchlist() {
     toggle.textContent = "Search for movies"
+    title.textContent = "Your watchlist"
     searchSection.classList.add("hidden")
     main.innerHTML = ""
 
