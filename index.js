@@ -69,7 +69,8 @@ async function getFilmDetails(id) {
 }
 
 function addToWatchlist(id) {
-    watchlistArray.push(id)
+    let filmToAdd = filmsArray.find(item => item.imdbID === id)
+    watchlistArray.push(filmToAdd)
     localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
 }
 
@@ -77,6 +78,7 @@ function getWatchlist() {
     if (localWatchlist) {
         console.log(localWatchlist)
         watchlistArray = JSON.parse(localStorage.getItem("watchlist"))
+        console.log("from getWatchlist", watchlistArray)
     } else {
         console.log("no watchlist saved")
     }
@@ -155,24 +157,24 @@ function renderWatchlist() {
         let htmlString = ""
 
         watchlistArray.forEach(film => {
-            let filmDetails = filmsArray.find(item => item.imdbID === film)
+            // let filmDetails = watchlistArray.find(item => item.imdbID === film)
 
             htmlString += `
             <div class="film">
                 <div class="poster">
-                    <img src="${filmDetails.Poster}">
+                    <img src="${film.Poster}">
                 </div>
                 <div class="film-details-container">
                     <div class="title-rating">
-                        <h2>${filmDetails.Title} <span class="year">(${filmDetails.Year})</span></h2>
-                        <p><span class="star">&#9733;</span> ${filmDetails.imdbRating}</p>
+                        <h2>${film.Title} <span class="year">(${film.Year})</span></h2>
+                        <p><span class="star">&#9733;</span> ${film.imdbRating}</p>
                     </div>
                     <div class="film-details">
-                        <p class="runtime">${filmDetails.Runtime}</p>
-                        <p class="genre">${filmDetails.Genre}</p>
-                        <p class="watchlist-add" data-remove="${filmDetails.imdbID}"><span class="plus">-</span> Remove</p>
+                        <p class="runtime">${film.Runtime}</p>
+                        <p class="genre">${film.Genre}</p>
+                        <p class="watchlist-add" data-remove="${film.imdbID}"><span class="plus">-</span> Remove</p>
                     </div>
-                    <p class="plot">${filmDetails.Plot}</p>
+                    <p class="plot">${film.Plot}</p>
                 </div>
             </div>
         `
