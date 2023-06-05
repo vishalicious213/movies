@@ -47,11 +47,6 @@ main.addEventListener("click", function(e) {
     // remove movie from watchlist
     if (e.target.dataset.remove) {
         removeFromWatchlist(e.target.dataset.remove)
-        // const target = watchlistArray.find(item => item.imdbID === e.target.dataset.remove)
-        // const targetIndex = watchlistArray.indexOf(target)
-        // watchlistArray.splice(targetIndex, 1)
-        // localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
-        // renderWatchlist()
     }
 })
 
