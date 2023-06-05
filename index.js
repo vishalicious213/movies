@@ -33,7 +33,7 @@ main.addEventListener("click", function(e) {
         if (watchlistArray.includes(e.target.dataset.id)) {
             return
         } else {
-            watchlistArray.push(e.target.dataset.id)
+            addToWatchlist(e.target.dataset.id)
         }
     }
 
@@ -66,6 +66,11 @@ async function getFilmDetails(id) {
     const data = await response.json()
 
     filmsArray.push(data)
+}
+
+function addToWatchlist(id) {
+    watchlistArray.push(id)
+    localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
 }
 
 // ⬇️ RENDER APP ⬇️
@@ -129,6 +134,7 @@ function renderWatchlist() {
 
     if (localWatchlist) {
         console.log(localWatchlist)
+        // watchlistArray = 
     } else {
         console.log("no watchlist saved")
     }
