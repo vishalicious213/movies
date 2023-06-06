@@ -121,11 +121,12 @@ main {
     display: flex;
     border-bottom: 1px solid #2c2c2c;
     padding: 1rem 0;
-    /* max-width: 538px; */
 }
 
 .poster {
     width: 40%;
+    max-height: 30vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
 }
