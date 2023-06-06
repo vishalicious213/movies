@@ -131,21 +131,22 @@ function renderFilmsArray() {
 
     filmsArray.forEach(item => {
         htmlString += `
-            <div class="film">
+            <div class="film-container">
                 <div class="poster">
                     <img src="${item.Poster}">
                 </div>
                 <div class="film-details-container">
-                    <div class="title-rating">
-                        <h2>${item.Title} <span class="year">(${item.Year})</span></h2>
-                        <p><span class="star">&#9733;</span> ${item.imdbRating}</p>
+                    <div class="film-title">
+                        <h2>${item.Title}</h2>
                     </div>
                     <div class="film-details">
                         <p class="runtime">${item.Runtime}</p>
-                        <p class="genre">${item.Genre}</p>
-                        <p class="watchlist-add" data-id="${item.imdbID}"><span class="plus">+</span> Watchlist</p>
+                        <p class="rating"><span class="star">&#9733;</span> ${item.imdbRating}</p>
+                        <p class="year">${item.Year}</p>
                     </div>
+                    <p class="genre">${item.Genre}</p>
                     <p class="plot">${item.Plot}</p>
+                    <p class="watchlist-add" data-id="${item.imdbID}"><span class="plus">-</span> Add to watchlist</p>
                 </div>
             </div>
         `
