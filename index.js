@@ -106,6 +106,7 @@ function renderEmptyFilms() {
     toggle.textContent = "My Watchlist"
     title.textContent = "Find your film"
     searchSection.classList.remove("hidden")
+    main.classList.add("main-center")
     main.innerHTML = `
         <div id="filler">
             <img src="./img/reel.png" alt="">
@@ -118,6 +119,7 @@ function renderFilmNotFound() {
     toggle.textContent = "My Watchlist"
     title.textContent = "Find your film"
     searchSection.classList.remove("hidden")
+    main.classList.add("main-center")
     main.innerHTML = `
         <div id="not-found">
             <p>Unable to find what you're looking for. Please try another search.</p>
@@ -129,6 +131,7 @@ function renderFilmsArray() {
     toggle.textContent = "My Watchlist"
     title.textContent = "Find your film"
     searchSection.classList.remove("hidden")
+    main.classList.remove("main-center")
     let htmlString = ""
     main.innerHTML = ""
     
@@ -173,6 +176,7 @@ function renderWatchlist() {
     toggle.textContent = "Search for movies"
     title.textContent = "Your watchlist"
     searchSection.classList.add("hidden")
+    main.classList.remove("main-center")
     main.innerHTML = ""
 
     getWatchlist()

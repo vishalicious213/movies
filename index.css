@@ -101,7 +101,7 @@ main {
 #filler {
     text-align: center;
     color: #2e2e2f;
-    align-self: center;
+    /* align-self: center; */
     margin: auto;
 }
 
@@ -280,12 +280,6 @@ main {
     outline: 1px solid #a5a5a5;
 }
 
-/* UTILITY */
-
-.hidden {
-    display: none;
-}
-
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 550px) {
@@ -343,4 +337,14 @@ main {
     main {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+}
+
+/* UTILITY */
+
+.hidden {
+    display: none;
+}
+
+.main-center {
+    grid-template-columns: 1fr;
 }
