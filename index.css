@@ -40,12 +40,13 @@ header {
     background-color: #28282b;
     padding: .5rem 1rem;
     border-radius: .25rem;
+    outline: 1px solid #787878;
 }
 
 #list-toggle:hover {
     cursor: pointer;
     color: white;
-    outline: 1px solid #787878;
+    outline: 1px solid #a5a5a5;
 }
 
 /* SEARCH */
