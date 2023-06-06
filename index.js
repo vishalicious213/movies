@@ -133,7 +133,7 @@ function renderFilmsArray() {
         htmlString += `
             <div class="film-container">
                 <div class="poster">
-                    <img src="${item.Poster}">
+                    <img src="${item.Poster}" alt="${item.Title}">
                 </div>
                 <div class="film-details-container">
                     <div class="film-title">
@@ -178,7 +178,7 @@ function renderWatchlist() {
             htmlString += `
             <div class="film-container">
                 <div class="poster">
-                    <img src="${film.Poster}">
+                    <img src="${film.Poster}" alt="${film.Title}">
                 </div>
                 <div class="film-details-container">
                     <div class="film-title">
