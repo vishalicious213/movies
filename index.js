@@ -38,7 +38,8 @@ toggle.addEventListener("click", function() {
 main.addEventListener("click", function(e) {
     // add movie to watchlist
     if (e.target.dataset.id) {
-        if (watchlistArray.includes(e.target.dataset.id)) {
+        const target = watchlistArray.find(item => item.imdbID === e.target.dataset.id)
+        if (target) {
             return
         } else {
             addToWatchlist(e.target.dataset.id)
