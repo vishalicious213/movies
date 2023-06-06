@@ -64,7 +64,7 @@ header {
     outline: none;
     border: none;
     padding: .5rem;
-    width: 65%;
+    width: 55%;
 }
 
 .search-btn {
@@ -274,12 +274,8 @@ main {
         justify-items: normal;
     }
 
-    .search-section {
-        display: flex;
-        justify-content: center;
-        position: absolute;
-        width: 100%;
-        bottom: -1rem;
+    .search-field {
+        width: 65%;
     }
 
     .film-container {
@@ -303,6 +299,10 @@ main {
 @media screen and (min-width: 1000px) {
     main {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .search-field {
+        width: 75%;
     }
 }
 
