@@ -217,6 +217,14 @@ main {
     background-color: indianred;
 }
 
+.in-watchlist {
+    color: gold;
+}
+
+.hashtag {
+    background-color: gold;
+}
+
 /* WATCHLIST */
 
 .empty-watchlist {

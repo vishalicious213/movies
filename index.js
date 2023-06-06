@@ -128,8 +128,19 @@ function renderFilmsArray() {
     searchSection.classList.remove("hidden")
     let htmlString = ""
     main.innerHTML = ""
-
+    
     filmsArray.forEach(item => {
+        let inWatchlist = false
+        let watchButton = ""
+        let filmToFind = watchlistArray.find(watchlistFilm => item.imdbID === watchlistFilm.imdbID)
+
+        if (filmToFind) {
+            inWatchlist = true
+            watchButton = `<p class="watchlist-add in-watchlist" data-id="${item.imdbID}"><span class="plus hashtag">#</span> Already in watchlist</p>`
+        } else {
+            watchButton = `<p class="watchlist-add" data-id="${item.imdbID}"><span class="plus">-</span> Add to watchlist</p>`
+        }
+
         htmlString += `
             <div class="film-container">
                 <div class="poster">
@@ -146,7 +157,7 @@ function renderFilmsArray() {
                     </div>
                     <p class="genre">${item.Genre}</p>
                     <p class="plot">${item.Plot}</p>
-                    <p class="watchlist-add" data-id="${item.imdbID}"><span class="plus">-</span> Add to watchlist</p>
+                    ${watchButton}
                 </div>
             </div>
         `
@@ -201,4 +212,5 @@ function renderWatchlist() {
     }
 }
 
+getWatchlist()
 renderEmptyFilms()
