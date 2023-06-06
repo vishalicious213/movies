@@ -36,11 +36,16 @@ header {
 #list-toggle {
     text-align: end;
     min-width: 6rem;
+
+    background-color: #28282b;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
 }
 
 #list-toggle:hover {
     cursor: pointer;
     color: white;
+    outline: 1px solid #787878;
 }
 
 /* SEARCH */
