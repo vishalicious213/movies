@@ -138,12 +138,7 @@ main {
 .film-details-container {
     width: 60%;
     padding: 1rem;
-}
-
-.film-title {
-    display: flex;
-    align-items: baseline;
-    box-sizing: border-box;
+    display: grid;
 }
 
 .film-title h2 {
@@ -202,6 +197,7 @@ main {
     background-color: #28282b;
     border-radius: .33rem;
     padding: .25rem;
+    align-self: flex-end;
 }
 
 .watchlist-add:hover {
