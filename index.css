@@ -141,6 +141,7 @@ main {
     width: 90%;
     padding: 1rem;
     display: grid;
+    outline: 1px solid red;
 }
 
 .film-title h2 {
@@ -151,11 +152,9 @@ main {
 
 .film-details {
     display: grid;
-    grid-template-columns: .5fr .5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     font-size: 1rem;
     align-items: baseline;
-
-    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .film-details p {
@@ -284,6 +283,10 @@ main {
     
     .film-details-container {
         width: 60%;
+    }
+
+    .film-details {
+        grid-template-columns: .5fr .5fr 1fr;
     }
 }
 
