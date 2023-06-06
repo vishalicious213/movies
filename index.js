@@ -80,6 +80,7 @@ function addToWatchlist(id) {
     let filmToAdd = filmsArray.find(item => item.imdbID === id)
     watchlistArray.push(filmToAdd)
     localStorage.setItem("watchlist", JSON.stringify(watchlistArray))
+    renderFilmsArray()
 }
 
 function removeFromWatchlist(movie) {
@@ -137,7 +138,7 @@ function renderFilmsArray() {
 
         if (filmToFind) {
             inWatchlist = true
-            watchButton = `<p class="watchlist-add in-watchlist" data-id="${item.imdbID}"><span class="symbol hashtag">#</span> Already in watchlist</p>`
+            watchButton = `<p class="watchlist-add in-watchlist" data-id="${item.imdbID}"><span class="symbol hashtag">#</span> In watchlist</p>`
         } else {
             watchButton = `<p class="watchlist-add" data-id="${item.imdbID}"><span class="symbol plus">+</span> Add to watchlist</p>`
         }
