@@ -58,21 +58,13 @@ header {
     bottom: -1rem;
 }
 
-#magnifier {
-    background-color: #2e2e2f;
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
-    padding: .5rem;
-    margin: 0;
-}
-
 .search-field {
     color: #a5a5a5;
     background-color: #2e2e2f;
     outline: none;
     border: none;
     padding: .5rem;
-    width: 55%;
+    width: 65%;
 }
 
 .search-btn {
@@ -82,7 +74,7 @@ header {
     border: none;
     border-top-right-radius: .25rem;
     border-bottom-right-radius: .25rem;
-    padding: .75rem 2rem;
+    padding: .75rem 1rem;
 }
 
 .search-btn:hover {
@@ -280,6 +272,14 @@ main {
         grid-template-columns: 1fr auto;
         align-items: center;
         justify-items: normal;
+    }
+
+    .search-section {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        width: 100%;
+        bottom: -1rem;
     }
 
     .film-container {
