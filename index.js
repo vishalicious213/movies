@@ -55,7 +55,7 @@ main.addEventListener("click", function(e) {
 // ⬇️ EVENT HANDLERS ⬇️
 
 async function getFilms() {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
 
     if (data.Response === "False") {
@@ -70,7 +70,7 @@ async function getFilms() {
 }
 
 async function getFilmDetails(id) {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=8c98ceb6&i=${id}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&i=${id}`)
     const data = await response.json()
 
     filmsArray.push(data)
