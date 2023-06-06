@@ -57,6 +57,7 @@ main.addEventListener("click", function(e) {
 async function getFilms() {
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
+    console.log(data)
 
     if (data.Response === "False") {
         renderFilmNotFound()

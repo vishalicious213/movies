@@ -259,6 +259,27 @@ main {
     cursor: pointer;
 }
 
+/* MORE SECTION */
+
+.more {
+    color: gainsboro;
+    text-align: center;
+    background-color: #28282b;
+    margin: .5rem auto;
+    padding: .5rem;
+    outline: 1px solid #787878;
+    border-radius: .33rem;
+    width: 90%;
+    max-width: 10rem;
+    box-sizing: border-box;
+}
+
+.more:hover {
+    cursor: pointer;
+    color: white;
+    outline: 1px solid #a5a5a5;
+}
+
 /* UTILITY */
 
 .hidden {
