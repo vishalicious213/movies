@@ -126,7 +126,7 @@ main {
 }
 
 .poster {
-    width: 25%;
+    width: 40%;
     display: flex;
     align-items: center;
 }
@@ -136,7 +136,7 @@ main {
 }
 
 .film-details-container {
-    width: 75%;
+    width: 60%;
     padding: 1rem;
 }
 
@@ -147,15 +147,15 @@ main {
 }
 
 .film-title h2 {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 500;
     margin: 0;
 }
 
 .film-details {
     display: grid;
-    grid-template-columns: .25fr .25fr 1fr;
-    font-size: .75rem;
+    grid-template-columns: .5fr .5fr 1fr;
+    font-size: 1rem;
     align-items: baseline;
     /* outline: 1px solid red; */
 }
@@ -173,13 +173,13 @@ main {
 }
 
 .genre {
-    font-size: .75rem;
+    font-size: 1rem;
     margin: 0;
 }
 
 .plot {
     color: #a5a5a5;
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 400;
     margin: .5rem 0;
 }
