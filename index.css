@@ -24,7 +24,6 @@ header {
 #header-row {
     margin: auto;
     display: grid;
-    /* grid-template-columns: 2fr 1fr; */
     justify-items: center;
 }
 
@@ -278,7 +277,7 @@ main {
 
 @media screen and (min-width: 550px) {
     #header-row {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr auto;
         align-items: center;
         justify-items: normal;
     }
