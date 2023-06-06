@@ -24,8 +24,8 @@ header {
 #header-row {
     margin: auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
+    /* grid-template-columns: 2fr 1fr; */
+    justify-items: center;
 }
 
 #header-row h1 {
@@ -271,6 +271,12 @@ main {
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 550px) {
+    #header-row {
+        grid-template-columns: 2fr 1fr;
+        align-items: center;
+        justify-items: normal;
+    }
+
     .film-container {
         flex-direction: row;
         align-items: start;
