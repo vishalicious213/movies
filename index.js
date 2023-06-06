@@ -25,6 +25,9 @@ searchField.addEventListener("keypress", function(e) {
     }
 })
 
+// listen for clicks on more button
+more.addEventListener("click", getMoreFilms)
+
 // listen for clicks on watchlist/search text in header
 toggle.addEventListener("click", function() {
     if (toggle.textContent === "My Watchlist") {
@@ -102,6 +105,10 @@ function getWatchlist() {
     } else {
         return
     }
+}
+
+function getMoreFilms() {
+    console.log("more clicked")
 }
 
 // ⬇️ RENDER APP ⬇️
