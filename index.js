@@ -191,7 +191,7 @@ function renderWatchlist() {
                     </div>
                     <p class="genre">${film.Genre}</p>
                     <p class="plot">${film.Plot}</p>
-                    <p class="watchlist-add" data-remove="${film.imdbID}"><span class="plus">-</span> Remove from watchlist</p>
+                    <p class="watchlist-add remove" data-remove="${film.imdbID}"><span class="plus remove">-</span> Remove from watchlist</p>
                 </div>
             </div>
         `
