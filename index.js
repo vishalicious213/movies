@@ -4,10 +4,12 @@ const searchBtn = document.getElementById("search-btn")
 const main = document.getElementById("main")
 const toggle = document.getElementById("list-toggle")
 const title = document.getElementById("header-title")
+const more = document.getElementById("more")
 
 let filmsArray = []
 let watchlistArray = []
 let localWatchlist = localStorage.getItem("watchlist")
+let numOfPages = 0
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -57,7 +59,9 @@ main.addEventListener("click", function(e) {
 async function getFilms() {
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
-    console.log(data)
+    console.log(data.totalResults)
+    numOfPages = Math.ceil(data.totalResults / 10)
+    console.log(numOfPages)
 
     if (data.Response === "False") {
         renderFilmNotFound()
@@ -170,6 +174,12 @@ function renderFilmsArray() {
     })
 
     main.innerHTML = htmlString
+
+    if (numOfPages > 1) {
+        more.classList.remove("hidden")
+    } else {
+        more.classList.add("hidden")
+    }
 }
 
 function renderWatchlist() {
@@ -177,6 +187,7 @@ function renderWatchlist() {
     title.textContent = "Your watchlist"
     searchSection.classList.add("hidden")
     main.classList.remove("main-center")
+    more.classList.add("hidden")
     main.innerHTML = ""
 
     getWatchlist()
