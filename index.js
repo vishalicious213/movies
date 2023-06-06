@@ -136,9 +136,9 @@ function renderFilmsArray() {
 
         if (filmToFind) {
             inWatchlist = true
-            watchButton = `<p class="watchlist-add in-watchlist" data-id="${item.imdbID}"><span class="plus hashtag">#</span> Already in watchlist</p>`
+            watchButton = `<p class="watchlist-add in-watchlist" data-id="${item.imdbID}"><span class="symbol hashtag">#</span> Already in watchlist</p>`
         } else {
-            watchButton = `<p class="watchlist-add" data-id="${item.imdbID}"><span class="plus">-</span> Add to watchlist</p>`
+            watchButton = `<p class="watchlist-add" data-id="${item.imdbID}"><span class="symbol plus">+</span> Add to watchlist</p>`
         }
 
         htmlString += `
@@ -202,7 +202,7 @@ function renderWatchlist() {
                     </div>
                     <p class="genre">${film.Genre}</p>
                     <p class="plot">${film.Plot}</p>
-                    <p class="watchlist-add remove" data-remove="${film.imdbID}"><span class="plus remove">-</span> Remove from watchlist</p>
+                    <p class="watchlist-add remove" data-remove="${film.imdbID}"><span class="symbol minus">-</span> Remove from watchlist</p>
                 </div>
             </div>
         `

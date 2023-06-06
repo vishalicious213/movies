@@ -180,20 +180,10 @@ main {
 
 /* FILM DETAILS - WATCHLIST BUTTONS */
 
-.plus {
-    background: whitesmoke;
-    color: #121212;
-    width: 1rem;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    font-size: 1rem;
-}
-
 .watchlist-add {
     min-width: 5rem;
     color: gainsboro;
-    font-size: .75rem;
+    font-size: .9rem;
     background-color: #28282b;
     border-radius: .33rem;
     padding: .25rem;
@@ -209,16 +199,34 @@ main {
     background-color: limegreen;
 }
 
+.symbol {
+    background: whitesmoke;
+    color: #121212;
+    width: 1rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+
 .remove:hover {
     color: indianred;
 }
 
-.remove:hover .plus {
+.remove:hover .minus {
     background-color: indianred;
 }
 
 .in-watchlist {
     color: gold;
+}
+
+.in-watchlist:hover {
+    color: yellow;
+}
+
+.in-watchlist:hover .hashtag {
+    background-color: yellow;
 }
 
 .hashtag {
