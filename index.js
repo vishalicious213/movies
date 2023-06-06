@@ -175,21 +175,22 @@ function renderWatchlist() {
 
         watchlistArray.forEach(film => {
             htmlString += `
-            <div class="film">
+            <div class="film-container">
                 <div class="poster">
                     <img src="${film.Poster}">
                 </div>
                 <div class="film-details-container">
-                    <div class="title-rating">
-                        <h2>${film.Title} <span class="year">(${film.Year})</span></h2>
-                        <p><span class="star">&#9733;</span> ${film.imdbRating}</p>
+                    <div class="film-title">
+                        <h2>${film.Title}</h2>
                     </div>
                     <div class="film-details">
                         <p class="runtime">${film.Runtime}</p>
-                        <p class="genre">${film.Genre}</p>
+                        <p class="rating"><span class="star">&#9733;</span> ${film.imdbRating}</p>
+                        <p class="year">${film.Year}</p>
                     </div>
+                    <p class="genre">${film.Genre}</p>
                     <p class="plot">${film.Plot}</p>
-                    <p class="watchlist-add" data-remove="${film.imdbID}"><span class="plus">-</span> Remove</p>
+                    <p class="watchlist-add" data-remove="${film.imdbID}"><span class="plus">-</span> Remove from watchlist</p>
                 </div>
             </div>
         `
