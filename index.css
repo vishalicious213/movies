@@ -121,6 +121,9 @@ main {
     display: flex;
     border-bottom: 1px solid #2c2c2c;
     padding: 1rem 0;
+
+    flex-direction: column;
+    align-items: center;
 }
 
 .poster {
@@ -129,6 +132,9 @@ main {
     overflow: hidden;
     display: flex;
     align-items: center;
+
+    /* outline: 1px solid red; */
+    width: 100%;
 }
 
 .poster img {
@@ -139,6 +145,9 @@ main {
     width: 60%;
     padding: 1rem;
     display: grid;
+
+    /* outline: 1px solid red; */
+    width: 90%;
 }
 
 .film-title h2 {
@@ -152,6 +161,8 @@ main {
     grid-template-columns: .5fr .5fr 1fr;
     font-size: 1rem;
     align-items: baseline;
+
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .film-details p {
