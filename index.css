@@ -119,22 +119,18 @@ main {
 
 .film-container {
     display: flex;
-    border-bottom: 1px solid #2c2c2c;
-    padding: 1rem 0;
-
     flex-direction: column;
     align-items: center;
+    border-bottom: 1px solid #2c2c2c;
+    padding: 1rem 0;
 }
 
 .poster {
-    width: 40%;
+    width: 100%;
     height: 30vh;
     overflow: hidden;
     display: flex;
     align-items: center;
-
-    /* outline: 1px solid red; */
-    width: 100%;
 }
 
 .poster img {
@@ -142,12 +138,9 @@ main {
 }
 
 .film-details-container {
-    width: 60%;
+    width: 90%;
     padding: 1rem;
     display: grid;
-
-    /* outline: 1px solid red; */
-    width: 90%;
 }
 
 .film-title h2 {
@@ -278,6 +271,21 @@ main {
 }
 
 /* MEDIA QUERIES */
+
+@media screen and (min-width: 550px) {
+    .film-container {
+        flex-direction: row;
+        align-items: start;
+    }
+    
+    .poster {
+        width: 40%;
+    }
+    
+    .film-details-container {
+        width: 60%;
+    }
+}
 
 @media screen and (min-width: 1000px) {
     main {
