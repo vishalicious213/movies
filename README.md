@@ -69,3 +69,47 @@ Deployed at: https://vish213-movies.netlify.app/
 - JSON
     - .parse()
     - .stringify()
+
+## CSS concepts
+
+- background-image
+- border-radius
+    - border-top-right-radius
+    - border-bottom
+    - border-bottom-right-radius
+- box-sizing
+    - border-box
+- cursor
+    - pointer
+- display
+    - grid
+        - align-items
+        - align-self
+        - gap
+        - grid-template-columns
+            - fr units
+        - justify-items
+    - flex
+        - align-items
+        - flex-direction
+            - column
+            - row
+        - justify-content
+    - inline-block
+    - none
+- font-family
+- font-size
+- font-weight
+- :hover
+- media queries
+    - @media
+        - screen
+- min-height
+- min-width
+- outline
+- overflow
+- position
+    - absolute
+        - bottom
+    - relative
+- text-align
