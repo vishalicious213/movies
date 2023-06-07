@@ -35,7 +35,6 @@ header {
 #list-toggle {
     text-align: end;
     min-width: 6rem;
-
     background-color: #28282b;
     padding: .5rem 1rem;
     border-radius: .25rem;
@@ -101,7 +100,6 @@ main {
 #filler {
     text-align: center;
     color: #2e2e2f;
-    /* align-self: center; */
     margin: auto;
 }
 
