@@ -64,7 +64,7 @@ main.addEventListener("click", function(e) {
 async function getFilms() {
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
-    // console.log(data.totalResults)
+    console.log(data.totalResults)
     numOfPages = Math.ceil(data.totalResults / 10)
     // console.log(numOfPages)
 
@@ -113,8 +113,12 @@ function getWatchlist() {
 async function getMoreFilms() {
     if (lastPage < numOfPages) {
         lastPage ++
+        if (lastPage === numOfPages) {
+            numOfPages = 1
+            more.classList.add("hidden")
+        }
     }
-    // console.log(searchTerm, lastPage, numOfPages)
+    console.log(searchTerm, lastPage, numOfPages)
 
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchTerm}&page=${lastPage}`)
     const data = await response.json()
