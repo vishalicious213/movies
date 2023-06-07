@@ -10,6 +10,8 @@ let filmsArray = []
 let watchlistArray = []
 let localWatchlist = localStorage.getItem("watchlist")
 let numOfPages = 0
+let lastPage = 1
+let searchTerm = ""
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -72,6 +74,7 @@ async function getFilms() {
         filmsArray = []
         const responseArray = data.Search
         await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
+        searchTerm = searchField.value
         searchField.value = ""
         renderFilmsArray()
     }
@@ -107,8 +110,27 @@ function getWatchlist() {
     }
 }
 
-function getMoreFilms() {
-    console.log("more clicked")
+async function getMoreFilms() {
+    if (lastPage < numOfPages) {
+        lastPage ++
+    }
+    console.log(searchTerm, lastPage, numOfPages)
+
+    const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchTerm}&page=${lastPage}`)
+    const data = await response.json()
+    console.log(data)
+
+    // if (data.Response === "False") {
+    //     renderFilmNotFound()
+    // } else {
+    //     filmsArray = []
+    //     const responseArray = data.Search
+    //     await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
+    //     searchField.value = ""
+    //     renderFilmsArray()
+    // }
+
+
 }
 
 // ⬇️ RENDER APP ⬇️
