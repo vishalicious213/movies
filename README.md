@@ -23,3 +23,49 @@ I implemented all of the functionality from the requirements and then added onto
 - The application is responsive
 
 Deployed at: https://vish213-movies.netlify.app/
+
+![](./img/screenshot.jpg)
+
+## JavaScript concepts
+
+- variables
+- arrays
+    - .find()
+    - .forEach()
+    - .indexOf()
+    - .length
+    - .map()
+    - .push()
+    - .splice()
+- functions
+    - async/await
+    - event listeners
+    - event handlers
+- if/else
+- return
+- document
+    - .getElementById()
+- element
+    - .addEventListener()
+    - .classList
+        - .add()
+        - .remove()
+    - .innerHTML
+    - .target
+        - .dataset
+    - .textContent
+    - .value
+- localStorage
+    - .getItem()
+    - .setItem()
+- fetch()
+    - .json()
+- Promise
+    - .all()
+- string template literals
+- URL parameters
+- Math
+    - .ceil()
+- JSON
+    - .parse()
+    - .stringify()
