@@ -61,10 +61,11 @@ main.addEventListener("click", function(e) {
 
 // ⬇️ EVENT HANDLERS ⬇️
 
+// get array of first page of search results
 async function getFilms() {
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
-    numOfPages = Math.ceil(data.totalResults / 10)
+    numOfPages = Math.ceil(data.totalResults / 10) // tracks # of pages for additional films
 
     if (data.Response === "False") {
         renderFilmNotFound()
@@ -78,6 +79,7 @@ async function getFilms() {
     }
 }
 
+// get individual film details
 async function getFilmDetails(id) {
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&i=${id}`)
     const data = await response.json()
@@ -85,6 +87,7 @@ async function getFilmDetails(id) {
     filmsArray.push(data)
 }
 
+// add films from search results to watchlist
 function addToWatchlist(id) {
     let filmToAdd = filmsArray.find(item => item.imdbID === id)
     watchlistArray.push(filmToAdd)
@@ -92,6 +95,7 @@ function addToWatchlist(id) {
     renderFilmsArray()
 }
 
+// remove films from watchlist
 function removeFromWatchlist(movie) {
     const target = watchlistArray.find(item => item.imdbID === movie)
     const targetIndex = watchlistArray.indexOf(target)
@@ -100,6 +104,7 @@ function removeFromWatchlist(movie) {
     renderWatchlist()
 }
 
+// if watchlist is saved in localStorage, get it
 function getWatchlist() {
     if (localWatchlist) {
         watchlistArray = JSON.parse(localStorage.getItem("watchlist"))
@@ -108,7 +113,9 @@ function getWatchlist() {
     }
 }
 
+// get arrays of additional pages of search results
 async function getMoreFilms() {
+    // track what page we're on and hide "more" button when end reached
     if (lastPage < numOfPages) {
         lastPage ++
         if (lastPage === numOfPages) {
