@@ -64,9 +64,9 @@ main.addEventListener("click", function(e) {
 async function getFilms() {
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
-    console.log(data.totalResults)
+    // console.log(data.totalResults)
     numOfPages = Math.ceil(data.totalResults / 10)
-    console.log(numOfPages)
+    // console.log(numOfPages)
 
     if (data.Response === "False") {
         renderFilmNotFound()
@@ -114,23 +114,15 @@ async function getMoreFilms() {
     if (lastPage < numOfPages) {
         lastPage ++
     }
-    console.log(searchTerm, lastPage, numOfPages)
+    // console.log(searchTerm, lastPage, numOfPages)
 
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchTerm}&page=${lastPage}`)
     const data = await response.json()
-    console.log(data)
+    // console.log(data)
 
-    // if (data.Response === "False") {
-    //     renderFilmNotFound()
-    // } else {
-    //     filmsArray = []
-    //     const responseArray = data.Search
-    //     await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
-    //     searchField.value = ""
-    //     renderFilmsArray()
-    // }
-
-
+    const responseArray = data.Search
+    await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
+    renderFilmsArray()
 }
 
 // ⬇️ RENDER APP ⬇️
@@ -172,6 +164,7 @@ function renderFilmsArray() {
         let inWatchlist = false
         let watchButton = ""
         let filmToFind = watchlistArray.find(watchlistFilm => item.imdbID === watchlistFilm.imdbID)
+        let image = ""
 
         if (filmToFind) {
             inWatchlist = true
@@ -180,10 +173,16 @@ function renderFilmsArray() {
             watchButton = `<p class="watchlist-add" data-id="${item.imdbID}"><span class="symbol plus">+</span> Add to watchlist</p>`
         }
 
+        if (item.Poster === "N/A") {
+            image = "./img/no-image.jpg"
+        } else {
+            image = item.Poster
+        }
+
         htmlString += `
             <div class="film-container">
                 <div class="poster">
-                    <img src="${item.Poster}" alt="${item.Title}">
+                    <img src="${image}" alt="${item.Title}">
                 </div>
                 <div class="film-details-container">
                     <div class="film-title">
