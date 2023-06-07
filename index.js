@@ -64,9 +64,7 @@ main.addEventListener("click", function(e) {
 async function getFilms() {
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchField.value}`)
     const data = await response.json()
-    console.log(data.totalResults)
     numOfPages = Math.ceil(data.totalResults / 10)
-    // console.log(numOfPages)
 
     if (data.Response === "False") {
         renderFilmNotFound()
@@ -118,11 +116,9 @@ async function getMoreFilms() {
             more.classList.add("hidden")
         }
     }
-    console.log(searchTerm, lastPage, numOfPages)
 
     const response = await fetch(`https://www.omdbapi.com/?apikey=8c98ceb6&s=${searchTerm}&page=${lastPage}`)
     const data = await response.json()
-    // console.log(data)
 
     const responseArray = data.Search
     await Promise.all(responseArray.map(item => getFilmDetails(item.imdbID)))
