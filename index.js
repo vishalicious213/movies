@@ -136,7 +136,7 @@ async function getMoreFilms() {
 
 function renderEmptyFilms() {
     toggle.textContent = "My Watchlist"
-    title.textContent = "Find your film"
+    title.textContent = "Watch This!"
     searchSection.classList.remove("hidden")
     main.classList.add("main-center")
     main.innerHTML = `
@@ -149,7 +149,7 @@ function renderEmptyFilms() {
 
 function renderFilmNotFound() {
     toggle.textContent = "My Watchlist"
-    title.textContent = "Find your film"
+    title.textContent = "Watch This!"
     searchSection.classList.remove("hidden")
     main.classList.add("main-center")
     main.innerHTML = `
@@ -161,7 +161,7 @@ function renderFilmNotFound() {
 
 function renderFilmsArray() {
     toggle.textContent = "My Watchlist"
-    title.textContent = "Find your film"
+    title.textContent = "Watch This!"
     searchSection.classList.remove("hidden")
     main.classList.remove("main-center")
     let htmlString = ""
